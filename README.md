@@ -7,4 +7,4 @@ Teammitglieder
 ====
 Alexander Schneider
 Ngoune Neylor
-
+Eduard Rall

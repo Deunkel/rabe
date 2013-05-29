@@ -1,0 +1,44 @@
+	[
+
+	{
+  "id": "1",
+  "Raum": "A 111",
+  "Einrichtung": "Beamer, Taffel, Overhead",
+  "Pleatze": "30",
+  "Belvon": "08:00",
+  "Belbis": "09:00"
+	},
+
+	{
+  "id": "2",
+  "Raum": "A 214",
+  "Einrichtung": "Tafel, Overhead",
+  "Pleatze": "25",
+  "Belvon": "10:00",
+  "Belbis": "11:00"
+	},
+
+		{
+  "id": "3",
+  "Raum": "K 101",
+  "Einrichtung": "Beamer, Taffel, Overhead",
+  "Pleatze": "28",
+  "Belvon": "12:00",
+  "Belbis": "13:00"
+	},
+  
+  {
+  "id": "4",
+  "Raum": "A 101",
+  "Einrichtung": "Tafel, Overhead",
+  "Pleatze": "25",
+  "Belvon": "14:00",
+  "Belbis": "15:00"
+  }
+	]	
+	
+
+
+
+
+

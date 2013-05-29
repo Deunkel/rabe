@@ -88,7 +88,7 @@ $btnBackground:                     $white !default;
 $btnBackgroundHighlight:            darken($white, 10%) !default;
 $btnBorder:                         #bbb !default;
 
-$btnPrimaryBackground:              $linkColor !default;
+$btnPrimaryBackground:              #333333 !default;									//$linkColor auf #333333 geändert
 $btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 20%) !default;
 
 $btnInfoBackground:                 #5bc0de !default;
@@ -151,8 +151,8 @@ $zindexModal:             1050 !default;
 
 // Sprite icons path
 // -------------------------
-$iconSpritePath:          "glyphicons-halflings.png" !default;
-$iconWhiteSpritePath:     "glyphicons-halflings-white.png" !default;
+$iconSpritePath:          "../../img/glyphicons-halflings.png" !default;
+$iconWhiteSpritePath:     "../../img/glyphicons-halflings-white.png" !default;
 
 
 // Input placeholder text color

@@ -3,10 +3,15 @@
     <div class="navbar-inner">
         <a class="brand" href="#">RABE</a>
         <ul class="nav">
+            
             <li><input type="text" class="search-query" ng-model="query" placeholder="Bitte einen Raum eingeben" ng-show="showSearch" style="margin-top:6px; margin-right: 10px"></li>
+            <li class="divider-vertical"></li>
             <li ng-class="{active: showSearch}" ng-click="showSearch=!showSearch" data-toggle="collapse" data-target="#search"><a href=""><i class="icon-search icon-white"></i></a></li>
+            <li class="divider-vertical"></li>
             <li ng-class="{active: showTime}" ng-click="showTime=!showTime" data-toggle="collapse" data-target="#time"><a href=""><i class="icon-time icon-white"></i></a></li>
+            <li class="divider-vertical"></li>
             <li ng-class="{active: showMap}" ng-click="showMap=!showMap" data-toggle="collapse" data-target="#map"><a href=""><i class="icon-home icon-white"></i></a></li>
+            <li class="divider-vertical"></li>
         </ul>
     </div>
   </div>
@@ -48,8 +53,8 @@
           <div class="span1" style="text-align: center">
             <h6>{{room.name}}</h6>
           </div>
-          <a class="pull-right btn btn-mini btn-primary" type="button" ng-click="chooseObject(room)" style="margin-top: 9px; margin-right: 5px"><i class="icon-chevron-down icon-white"></i></a>
-          <a class="pull-right btn btn-mini btn-primary" type="button" ng-click="chooseObject(room)" style="margin-top: 9px; margin-right: 5px" data-toggle="modal" href="#roomInfo"><i class="icon-question-sign icon-white"></i></a>
+          <a class="pull-right" ng-click="chooseObject(room)" style="margin-top: 9px; margin-right: 20px"><i class="icon-chevron-down icon-white"></i></a>
+          <a class="pull-right" ng-click="chooseObject(room)" style="margin-top: 9px; margin-right: 35px" data-toggle="modal" href="#roomInfo"><i class="icon-question-sign icon-white"></i></a>
         </div>
       </div>
       <div id="collapse{{room.id}}" class="accordion-body collapse out">

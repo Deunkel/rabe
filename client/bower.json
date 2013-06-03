@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "dependencies": {
     "jquery": "~2.0.1",
+    "angular-cookies": "~1.0.6",
     "angular-mocks": "~1.0.6",
     "angular-resource": "~1.0.6",
-    "angular-cookies": "~1.0.6",
-    "angular": "~1.0.6",
     "angular-sanitize": "~1.0.6",
     "angular-scenario": "~1.0.6",
-    "es5-shim": "~2.0.8",
-    "json3": "~3.2.4"
+    "sass-bootstrap": "~2.3.2",
+    "json3": "~3.2.4",
+    "angular": "~1.0.6",
+    "es5-shim": "~2.0.8"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.5",

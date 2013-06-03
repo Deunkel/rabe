@@ -1,148 +1,40 @@
 @import "compass_twitter_bootstrap";
 @import "compass_twitter_bootstrap_responsive";
 
-
-
-#container {
-  position:absolute;
-  display:block;
-  margin-top:10px;
-  margin-bottom:-50px;
-  z-index:5000;
-  width:79.5%;
-
+body{
+  background-color: #eee;
 }
 
-
-
-
-// Base class and wrapper
 .navbar {
-  overflow: visible;
-  margin-bottom: $baseLineHeight;
-  margin-top: 10px;
-  // Fix for IE7's bad z-indexing so dropdowns don't appear below content that follows the navbar
-  *position: relative;
-  *z-index: 2;
+  margin-bottom: 0px;
 }
 
-
-// Brand: website or project name
-// -------------------------
-.navbar .brand {
-  float: left;
-  color: red;
-  display: block;
-  // Vertically center the text given $navbarHeight
-  padding: (($navbarHeight - $baseLineHeight) / 2) 20px (($navbarHeight - $baseLineHeight) / 2);
-  margin-left: -35px; // negative indent to left-align the text down the page
-  font-size: 40px;
-  font-weight: 400;
-  text-shadow: 0 1px 0 $navbarBackgroundHighlight;
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-// Inner for background effects
-// Gradient is applied to its own element because overflow visible is not honored by IE when filter is present
 .navbar-inner {
-  min-height: $navbarHeight;
-  padding-left:  20px;
-  padding-right: 1px;
-  color:white;
-  margin:0;
-  pading:0;
+  @include ctb-border-radius(0px);
+}
+
+.time {
+  border: 1px solid #ccc;
+  padding-top: 15px;
+  padding-left: 15px;
+  overflow: hidden;
+  background-color: #ddd;
+}
+
+#map {
+  height: 20em;
+  width: 100%;
+}
+
+#map_canvas { 
+  height: 20em; 
+  width: 100%; 
+}
+
+.accordion-heading {
   @include ctb-gradient-vertical($navbarBackgroundHighlight, $navbarBackground);
-  border: 1px solid $navbarBorder;
-  @include ctb-border-radius($baseBorderRadius);
-  @include ctb-box-shadow(0 1px 4px rgba(0,0,0,.065));
-
-  // Prevent floats from breaking the navbar
-  @include ctb-clearfix();
+  color: white;
 }
-
-
-
-// NAVIGATION
-// ---------- verändert float von left zu right
-
-.navbar .nav {
-  position: relative;
-  left: 0;
-  display: block;
-  float: right;
-  margin: 0 10px 0 0;
-}
-.navbar .nav.pull-right {
-  float: right; // redeclare due to specificity
-  margin-right: 0; // remove margin on float right nav
-}
-.navbar .nav > li {
-  float: left;
-  margin-left:5px;
-}
-
-
-
-// Buttons
-// -------------------------
-$btnBackground:                     $white !default;
-$btnBackgroundHighlight:            darken($white, 10%) !default;
-$btnBorder:                         #bbb !default;
-
-$btnPrimaryBackground:              #5bc0de !default;
-$btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 20%) !default;
-
-.MapBtn {
-  position: relative;
-  top: -200px;
-  display: block;
-  float: left;
-  margin: 0 10px 0 0;
-  z-index:50;
-}
-
-
-// SEARCH FORM
-// -----------
-
-input.search-query {
-  padding-right: -5px;
-  padding-right: 4px \9;
-  padding-left: 14px;
-  padding-left: 4px \9; /* IE7-8 doesn't have border-radius, so don't indent the padding */
-  margin-bottom: 0; // Remove the default margin on all inputs
-  margin-top:5px;
-  @include ctb-border-radius(15px);
-}
-
-
-
-.lol {
-  min-height: $navbarHeight;
-   border: 1px solid ;
-  color:white;
-  margin:0;
-  pading:0;
-  @include ctb-gradient-vertical($navbarBackgroundHighlight, $navbarBackground);
-  border: 1px solid $navbarBorder;
-  @include ctb-border-radius($baseBorderRadius);
-  @include ctb-box-shadow(0 1px 4px rgba(0,0,0,.065));
-
-  // Prevent floats from breaking the navbar
-  @include ctb-clearfix();
-}
-
-.lol2 {
-  min-height: $navbarHeight;
-  color:Black;
-  margin:0;
-  pading:0;
-  @include ctb-gradient-vertical($navbarBackgroundHighlight, $navbarBackground);
-  border: 1px solid $navbarBorder;
-  @include ctb-border-radius($baseBorderRadius);
-  @include ctb-box-shadow(0 1px 4px rgba(0,0,0,.065));
-  // Prevent floats from breaking the navbar
-  @include ctb-clearfix();
+.accordion-inner {
+  background-color: #ddd;
 }

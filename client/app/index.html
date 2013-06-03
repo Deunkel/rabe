@@ -30,56 +30,32 @@
     <script src="components/angular-resource/angular-resource.js"></script>
     <script src="components/angular-cookies/angular-cookies.js"></script>
     <script src="components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="components/jquery/jquery.js"></script>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-
-    <!-- Assets für Autoresize der Seite+Erzeugen des Buttons-->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/ui-bootstrap-custom-0.4.0-SNAPSHOT.js"></script>
-    <script src="assets/js/ui-bootstrap-custom-tpls-0.4.0-SNAPSHOT.js"></script>
-
-
 
 
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/filters/freeRoom.js"></script>
+    <script src="scripts/controllers/navbar.js"></script>
     <!-- endbuild -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
-
-
-    <!-- Koordinaten anzeigen GoogleMapsApi-->
-    <script>
-         function initialize(coords) {
-            var latlng = new google.maps.LatLng(coords.latitude, coords.longitude);
-            var myOptions = {
-                zoom: 19,
-                center: latlng,
-                disableDefaultUI:true,
-                mapTypeId: google.maps.MapTypeId.SATELLITE
-            };
-            var map = new google.maps.Map(document.getElementById("pos"), myOptions);
-
-            var marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-                title: "Hier bist du :)"
-            });
-        }
-
-        navigator.geolocation.getCurrentPosition(function(position){
-            initialize(position.coords);
-        }, function(){
-            document.getElementById('pos').innerHTML = 'Deine Position konnte leider nicht ermittelt werden';
-        });
-    </script>
+    <!-- build:js scripts/bootstrap.js -->
+    <script src="components/sass-bootstrap/js/bootstrap-affix.js"></script>
+    <script src="components/sass-bootstrap/js/bootstrap-alert.js"></script>
+    <script src="components/sass-bootstrap/js/bootstrap-button.js"></script>
+    <script src="components/sass-bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="components/sass-bootstrap/js/bootstrap-collapse.js"></script>
+    <script src="components/sass-bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="components/sass-bootstrap/js/bootstrap-modal.js"></script>
+    <script src="components/sass-bootstrap/js/bootstrap-scrollspy.js"></script>
+    <script src="components/sass-bootstrap/js/bootstrap-tab.js"></script>
+    <script src="components/sass-bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="components/sass-bootstrap/js/bootstrap-popover.js"></script>
+    <script src="components/sass-bootstrap/js/bootstrap-transition.js"></script>
+    <script src="components/sass-bootstrap/js/bootstrap-typeahead.js"></script>
+    <!-- endbuild -->
 
   </body>
 </html>

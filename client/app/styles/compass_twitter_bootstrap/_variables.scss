@@ -181,7 +181,7 @@ $navbarCollapseWidth:             979px !default;
 $navbarCollapseDesktopWidth:      $navbarCollapseWidth + 1 !default;
 
 $navbarHeight:                    40px !default;
-$navbarBackgroundHighlight:       #ffffff !default;
+$navbarBackgroundHighlight:       #4a4a4a !default;
 $navbarBackground:                darken($navbarBackgroundHighlight, 5%) !default;
 $navbarBorder:                    darken($navbarBackground, 12%) !default;
 
@@ -192,7 +192,7 @@ $navbarLinkColorActive:           $gray !default;
 $navbarLinkBackgroundHover:       transparent !default;
 $navbarLinkBackgroundActive:      darken($navbarBackground, 5%) !default;
 
-$navbarBrandColor:                $navbarLinkColor !default;
+$navbarBrandColor:                #F00 !default;//$navbarLinkColor !default;
 
 // Inverted navbar
 $navbarInverseBackground:                #111111 !default;

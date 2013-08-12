@@ -383,6 +383,24 @@ angular.module('clientApp')
                 'selected': false
             },
 
+            'N': {
+                'name': 'N',
+                'path': [
+                    new google.maps.LatLng(49.767297,6.628066),
+                    new google.maps.LatLng(49.767265,6.628227),
+                    new google.maps.LatLng(49.767085,6.628152),
+                    new google.maps.LatLng(49.767116,6.627985),
+                    new google.maps.LatLng(49.767297,6.628066)
+                ],
+                'strokeColor': '#f77f00',
+                'strokeOpacity': 0.8,
+                'strokeWeight': 2,
+                'fillColor': '#F7D900',
+                'fillOpacity': 0.50,
+                'polygon': null,
+                'selected': false
+            },
+
                'O': {
                 'name': 'O',
                 'path': [

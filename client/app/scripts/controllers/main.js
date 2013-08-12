@@ -15,7 +15,7 @@ angular.module('clientApp')
 		$scope.choice = objName;
 	};
 
-<<<<<<< HEAD
+
 	//Google Maps Api
 	function initialize(coords) {
 
@@ -136,7 +136,7 @@ angular.module('clientApp')
 		document.getElementById('map_canvas').innerHTML = 'Deine Position konnte leider nicht ermittelt werden';
 	});
 	
-=======
+
 	//Google Maps & Geolocation API NEW
 	var marker;
 		var infoWindow;
@@ -613,5 +613,4 @@ angular.module('clientApp')
 		//document.getElementById('map_canvas').innerHTML = 'Deine Position konnte leider nicht ermittelt werden';
 	//});
 
->>>>>>> googleapi
 });

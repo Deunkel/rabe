@@ -60,8 +60,9 @@
       <div id="collapse{{room.id}}" class="accordion-body collapse out">
         <div class="accordion-inner">
           <ul>
-            <li ng-repeat="occupancy in room.occupancys">{{occupancy.name}} von: {{occupancy.begin}} bis: {{occupancy.end}}</li>
+            <li ng-repeat="event in room.events">{{event.title}} von: {{event.start}} bis: {{event.end}}</li>
           </ul>
+          <!--<calendar ng-model="room.events">Hallo</calendar>-->
         </div>
       </div>
     </div>

@@ -11,3 +11,15 @@ angular.module('clientApp', [])
         redirectTo: '/'
       });
   });
+
+require.config({
+
+  baseUrl: 'scripts/',
+
+  shim: {
+  },
+
+  paths: {
+    d3: '../components/d3/d3.min'
+  }
+});

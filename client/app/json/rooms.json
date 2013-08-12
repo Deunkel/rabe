@@ -1,0 +1,60 @@
+[
+	{
+		"id": "1",
+		"name": "A 111",
+		"equipment": "Beamer, Taffel, Overhead",
+		"seats": "30",
+		"events":[
+				{"id":"170557","start":"2013-08-06 12:00:00","end":"2013-08-06 15:30:00","allDay":false,"title":"Mathematik"},
+				{"id":"170558","start":"2013-08-06 16:00:00","end":"2013-08-06 18:30:00","allDay":false,"title":"Mathematik"},
+				{"id":"170560","start":"2013-08-07 15:00:00","end":"2013-08-07 17:00:00","allDay":false,"title":"Brandt Brauer Frick"},
+				{"id":"170560","start":"2013-08-08 15:00:00","end":"2013-08-08 17:00:00","allDay":false,"title":"Workflowmanagement"},
+				{"id":"170559","start":"2013-03-08 00:00:00","allDay":true,"title":"Frauentag"}
+		]
+	},
+	{
+		"id": "2",
+		"name": "A 214",
+		"equipment": "Tafel, Overhead",
+		"seats": "25",
+		"events":[
+				{"id":"170557","start":"2013-08-06T12:00:00","end":"2013-08-06T15:30:00","allDay":false,"title":"Mathematik"},
+				{"id":"170558","start":"2013-08-06T16:00:00","end":"2013-08-06T18:30:00","allDay":false,"title":"Mathematik"},
+				{"id":"170560","start":"2013-08-07T15:00:00","end":"2013-08-07T17:00:00","allDay":false,"title":"Brandt Brauer Frick"},
+				{"id":"170560","start":"2013-08-08T15:00:00","end":"2013-08-08T17:00:00","allDay":false,"title":"Workflowmanagement"},
+				{"id":"170559","start":"2013-03-08T00:00:00","allDay":true,"title":"Frauentag"}
+		]
+	},
+	{
+		"id": "3",
+		"name": "K 101",
+		"equipment": "Beamer, Taffel, Overhead",
+		"seats": "28",
+		"events":[
+				{"id":"170557","start":"2013-08-06T12:00:00","end":"2013-08-06T15:30:00","allDay":false,"title":"Mathematik"},
+				{"id":"170558","start":"2013-08-06T16:00:00","end":"2013-08-06T18:30:00","allDay":false,"title":"Mathematik"},
+				{"id":"170560","start":"2013-08-07T15:00:00","end":"2013-08-07T17:00:00","allDay":false,"title":"Brandt Brauer Frick"},
+				{"id":"170560","start":"2013-08-08T15:00:00","end":"2013-08-08T17:00:00","allDay":false,"title":"Workflowmanagement"},
+				{"id":"170559","start":"2013-03-08T00:00:00","allDay":true,"title":"Frauentag"}
+		]
+	},
+	{
+		"id": "4",
+		"name": "A 101",
+		"equipment": "Tafel, Overhead",
+		"seats": "25",
+		"events":[
+				{"id":"170557","start":"2013-08-06T12:00:00","end":"2013-08-06T15:30:00","allDay":false,"title":"Mathematik"},
+				{"id":"170558","start":"2013-08-06T16:00:00","end":"2013-08-06T18:30:00","allDay":false,"title":"Mathematik"},
+				{"id":"170560","start":"2013-08-07T15:00:00","end":"2013-08-07T17:00:00","allDay":false,"title":"Brandt Brauer Frick"},
+				{"id":"170560","start":"2013-08-08T15:00:00","end":"2013-08-08T17:00:00","allDay":false,"title":"Workflowmanagement"},
+				{"id":"170559","start":"2013-03-08T00:00:00","allDay":true,"title":"Frauentag"}
+		]
+	}
+]	
+	
+
+
+
+
+

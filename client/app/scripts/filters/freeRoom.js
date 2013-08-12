@@ -14,11 +14,11 @@ angular.module('clientApp')
 		angular.forEach(input, function(room, roomKey){
 			var isFree = true;
 			
-			angular.forEach(room.occupancys, function(occupancy, occupancyKey){
-			console.log(occupancy.begin + " " + to);
-			console.log(occupancy.begin>=to);
-			console.log(occupancy.end<=from);
-				if((occupancy.end<=from || occupancy.begin>=to ) && isFree) {
+			angular.forEach(room.events, function(event, eventKey){
+			console.log(event.start + " " + to);
+			console.log(event.start>=to);
+			console.log(event.end<=from);
+				if((event.end<=from || event.start>=to ) && isFree) {
 					isFree = true;
 				}
 				else{

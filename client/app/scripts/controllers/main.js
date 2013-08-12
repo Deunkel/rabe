@@ -7,7 +7,7 @@ angular.module('clientApp')
 	$scope.showMap = true;
 	$scope.query = "";
 
-	$http.get('json/raum.json').success(function(data) {
+	$http.get('json/rooms.json').success(function(data) {
 		$scope.rooms = data;
 	});
 
@@ -414,11 +414,11 @@ angular.module('clientApp')
 			var contentString = "<b>Timestamp:</b> " + parseTimestamp(position.timestamp) + "<br/><b>User location:</b> lat " + position.coords.latitude + ", long " + position.coords.longitude + ", accuracy " + position.coords.accuracy;
 			// Remove the current infoWindow, if there is one
 			if (typeof(infoWindow) != "undefined") infoWindow.setMap(null);
-			infowindow = new google.maps.InfoWindow({
+			infoWindow = new google.maps.InfoWindow({
 				content: contentString
 			});
 			google.maps.event.addListener(marker, 'click', function() {
-				infowindow.open(map,marker);
+				infoWindow.open(map,marker);
 			});
 		}
 		function displayError(error) {

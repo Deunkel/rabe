@@ -59,21 +59,41 @@
       </div>
       <div id="collapse{{room.id}}" class="accordion-body collapse out">
         <div class="accordion-inner">
-           <ul>
+      <!--<ul>
             <li ng-repeat="event in room.events[0]">{{event.title}} von: {{event.start}} bis: {{event.end}}</li>
-          </ul>
-          <div ui-calendar="{editable: false,firstDay:1,
+          </ul> -->
+          <div ui-calendar="{
+            editable: false,
+            firstDay:1,
             defaultView:'agendaDay',
-            eventColor:'#9E9E9E',
+            eventColor:'#4A4949',
             eventBackgroundColor:'#3B3B3B',
             allDaySlot:false,   
-            weekends:false,
-            contentHeight:999,
+            weekends:true,
+            contentHeight:270,
             header: {
               left: 'title',
               center: '',
               right: 'today prev,next,agendaDay,agendaWeek'
-            }
+            },
+            buttonText: {
+            today: 'Heute',
+            month: 'month',
+            week: 'Wochenansicht',
+            day: 'Tagesansicht'
+            },
+            timeFormat: 'HH:mm{ - H:mm}',
+            axisFormat:'HH(:mm):mm',
+            firstHour:7,
+            columnFormat: {
+            month: 'ddd',
+            week: 'dddd dd.',
+            day: 'dddd dd.'
+            },
+            monthNames: ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'],
+            monthNamesShort: ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'],
+            dayNames: ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'],
+            dayNamesShort: ['Son','Mon','Die','Mit','Don','Fre','Sam']
             }" class="span12" style="padding:0px; margin:0px;" ng-model="room.events"></div>
         </div>
       </div>

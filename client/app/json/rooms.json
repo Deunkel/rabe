@@ -6,10 +6,10 @@
     "seats": "30",
     "events":[
       [
-        {"id":"170557","start":"2013-08-06 12:00:00","end":"2013-08-06 15:30:00","allDay":false,"title":"Mathematik1"},
-        {"id":"170558","start":"2013-08-06 16:00:00","end":"2013-08-06 18:30:00","allDay":false,"title":"Mathematik2"},
-        {"id":"170560","start":"2013-08-07 15:00:00","end":"2013-08-07 17:00:00","allDay":false,"title":"Brandt Brauer Frick"},
-        {"id":"170560","start":"2013-08-08 22:00:00","end":"2013-08-08 23:00:00","allDay":false,"title":"Workflowmanagement"}
+        {"id":"170557","start":"2013-08-12 08:00:00","end":"2013-08-12 09:30:00","allDay":false,"title":"Mathematik1"},
+        {"id":"170558","start":"2013-08-12 10:00:00","end":"2013-08-12 11:30:00","allDay":false,"title":"Mathematik2"},
+        {"id":"170560","start":"2013-08-12 15:00:00","end":"2013-08-12 16:30:00","allDay":false,"title":"Brandt Brauer Frick"},
+        {"id":"170560","start":"2013-08-12 22:00:00","end":"2013-08-12 23:00:00","allDay":false,"title":"Workflowmanagement"}
       ],
       {
         

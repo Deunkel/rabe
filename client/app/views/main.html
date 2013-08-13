@@ -47,7 +47,7 @@
 
 <div class="row-fluid" style="margin-top: 10px">
   <div class="accordion" id="roomList">
-    <div class="accordion-group" ng-repeat="room in rooms | filter:{name:query} | freeRoom:fromTime:toTime">
+    <div class="accordion-group" ng-repeat="room in rooms | filter:{name:query} | freeRoom:fromTime:toTime | selectedBuilding:buildings">
       <div class="accordion-heading">
         <div class="row-fluid" class="accordion-toggle" data-toggle="collapse" data-parent="#roomList" href="#collapse{{room.id}}">
           <div class="span1" style="text-align: center">

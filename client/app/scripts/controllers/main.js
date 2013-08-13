@@ -15,7 +15,19 @@ angular.module('clientApp')
 		$scope.choice = objName;
 	};
 
-	var buildingDefaultFillOpacity = 0.8;
+	//Gebäude Style festlegen	
+	$scope.buildingFillColor = '#ddd';
+	$scope.buildingFillOpacity = 0.8;
+	$scope.buildingStrokeColor = '#333';
+	$scope.buildingStrokeOpacity = 0.8;
+	$scope.buildingStrokeWeight = 2;
+	//Gebäudeauswahl Style festlegen
+	$scope.selectionFillColor = '#f77f00';
+	$scope.selectionfillOpacity = 0.80;
+	$scope.selectionStrokeColor = $scope.buildingStrokeColor;
+	$scope.selectionStrokeOpacity = $scope.buildingStrokeOpacity;
+	$scope.selectionStrokeWeight = $scope.buildingStrokeWeight;
+
 
 	$scope.buildings = {
 		'A': {
@@ -27,15 +39,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.768326,6.62706),
 				new google.maps.LatLng(49.768642, 6.62721)
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.768452,6.627343),
-			'selected': false
+			'selected': true
 		},
 		'B': {
 			'name': 'B',
@@ -46,15 +58,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.768184, 6.627832),
 				new google.maps.LatLng(49.768496, 6.627983)
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.768307,6.628118),
-			'selected': false
+			'selected': true
 		},
 		'C': {
 			'name': 'C',
@@ -65,15 +77,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.768037,6.628616),
 				new google.maps.LatLng(49.768356,6.628758)
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.768166,6.628890),
-			'selected': false
+			'selected': true
 		},
 
 		'D': {
@@ -85,15 +97,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.767898,6.629388),
 				new google.maps.LatLng(49.768212,6.629528)
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.768021,6.629652),
-			'selected': false
+			'selected': true
 		},
 
 		'E': {
@@ -110,15 +122,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.768078,6.630901)
 
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767754,6.630972),
-			'selected': false
+			'selected': true
 		},
 
 		'F': {
@@ -132,15 +144,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.767649,6.6303)
 
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767520,6.630634),
-			'selected': false
+			'selected': true
 		},
 
 
@@ -159,15 +171,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.767353,6.630217)
 
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767331,6.630443),
-			'selected': false
+			'selected': true
 		},
 
 		'H': {
@@ -180,15 +192,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.767332,6.629989)
 
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767208,6.630242),
-			'selected': false
+			'selected': true
 		},
 
 		'J': {
@@ -201,15 +213,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.767176,6.629501)
 
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767040,6.629668),
-			'selected': false
+			'selected': true
 		},
 
 		'K': {
@@ -222,15 +234,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.767169,6.628951)
 
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767009,6.629043),
-			'selected': false
+			'selected': true
 		},
 
 		'L': {
@@ -243,15 +255,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.767262,6.628363)
 
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767089,6.628408),
-			'selected': false
+			'selected': true
 		},
 		
 		'N': {
@@ -263,15 +275,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.767116,6.627985),
 				new google.maps.LatLng(49.767297,6.628066)
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767191,6.628099),
-			'selected': false
+			'selected': true
 		},
 
 		'O': {
@@ -284,15 +296,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.767375,6.627755)
 
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767191,6.627791),
-			'selected': false
+			'selected': true
 		},
 
 		'T': {
@@ -305,15 +317,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.767678,6.626585)
 
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767872,6.626814),
-			'selected': false
+			'selected': true
 		},
 
 		'M': {
@@ -326,15 +338,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.768595,6.627079)
 
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.768705,6.626672),
-			'selected': false
+			'selected': true
 		},
 
 		'X': {
@@ -347,15 +359,15 @@ angular.module('clientApp')
 				new google.maps.LatLng(49.767354,6.628296)
 
 			],
-			'strokeColor': '#f77f00',
-			'strokeOpacity': 0.8,
-			'strokeWeight': 2,
-			'fillColor': '#F7D900',
-			'fillOpacity': buildingDefaultFillOpacity,
+			'strokeColor': $scope.buildingStrokeColor,
+			'strokeOpacity': $scope.buildingStrokeOpacity,
+			'strokeWeight': $scope.buildingStrokeWeight,
+			'fillColor': $scope.buildingFillColor,
+			'fillOpacity': $scope.buildingFillOpacity,
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767556,6.628534),
-			'selected': false
+			'selected': true
 		}
 	};
 
@@ -369,7 +381,7 @@ angular.module('clientApp')
 		//);
 		var options = {
 			zoom: 17,
-			center: new google.maps.LatLng(49.767719, 6.628745),
+			center: new google.maps.LatLng(49.767850, 6.628745),
 			disableDefaultUI:true,
 			scrollwheel: false,
 			draggable: false,
@@ -382,12 +394,6 @@ angular.module('clientApp')
 		//Zeichnen der Gebäude auf die Karte und registrieren der Click Events.
 		$scope.paintBuildings = function(){
 			angular.forEach($scope.buildings, function(building, key){
-				//Gebäudeauswahl Style festlegen
-				$scope.selectionStrokeColor = building.strokeColor;
-				$scope.selectionStrokeOpacity = building.strokeOpacity;
-				$scope.selectionStrokeWeight = building.strokeWeight;
-				$scope.selectionFillColor = '#f77f00';
-				$scope.selectionfillOpacity = 0.80;
 
 				//Wenn polygon zu Gebäude existiert nimm es von der Karte Runtern
 				if(building.polygon){
@@ -427,11 +433,13 @@ angular.module('clientApp')
 				//Platziere es auf der Karte
 				building.polygon.setMap(map);
 
-				 //Füge Klick Ereignis hinzu
+				//Füge Klick Ereignis hinzu
 				google.maps.event.addListener(building.polygon, 'click', function() {
-					//Wechsel den Selected Status des Objekts
-					building.selected = !building.selected;
-					$scope.paintBuildings();
+					$scope.$apply(function () {
+						//Wechsel den Selected Status des Objekts
+						building.selected = !building.selected;
+						$scope.paintBuildings();
+					});		
 				});
 			});
 		};

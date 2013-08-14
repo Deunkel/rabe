@@ -275,6 +275,22 @@
         
       }
     ]
+  },
+
+  {
+    "id": "17",
+    "name": "X 020",
+    "equipment": "Beamer/Datenprojektor (QSXGA),Tafel",
+    "seats": "30",
+    "events":[
+      [
+        {"id":"170051","start":"2013-08-19T14:00:00","end":"2013-08-19T15:30:00","allDay":false,"title":"Workflow-Management (Sitzung)"},
+        {"id":"170051","start":"2013-08-20T14:00:00","end":"2013-08-20T15:30:00","allDay":false,"title":"Bachelorthesis-Seminar (Sitzung)"}
+      ],
+      {
+        
+      }
+    ]
   }
 
 ]

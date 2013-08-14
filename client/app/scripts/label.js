@@ -15,7 +15,7 @@ function Label(optOptions) {
 		'white-space: nowrap;' +
 		//'border: 1px solid blue;' +
 		'padding: 0px;' +
-		'z-index: 1000;' +
+		'z-index: 100000;' +
 		//'background-color: white'
 		'';
 

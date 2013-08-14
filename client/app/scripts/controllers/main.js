@@ -17,13 +17,13 @@ angular.module('clientApp')
 
 	//Gebäude Style festlegen	
 	$scope.buildingFillColor = '#ddd';
-	$scope.buildingFillOpacity = 0.8;
+	$scope.buildingFillOpacity = 1.0;
 	$scope.buildingStrokeColor = '#333';
 	$scope.buildingStrokeOpacity = 0.8;
 	$scope.buildingStrokeWeight = 2;
 	//Gebäudeauswahl Style festlegen
 	$scope.selectionFillColor = '#f77f00';
-	$scope.selectionfillOpacity = 0.80;
+	$scope.selectionfillOpacity = 1.0;
 	$scope.selectionStrokeColor = $scope.buildingStrokeColor;
 	$scope.selectionStrokeOpacity = $scope.buildingStrokeOpacity;
 	$scope.selectionStrokeWeight = $scope.buildingStrokeWeight;
@@ -372,13 +372,8 @@ angular.module('clientApp')
 	};
 
 
-	//Google Maps & Geolocation API NEW
-	function displayPosition(position) {
-		var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-		//var imageBounds = new google.maps.LatLngBounds(
-		//new google.maps.LatLng(49.766111, 6.6253), //49.7663, 6.6254
-		//new google.maps.LatLng(49.769399, 6.6318) //49.7692, 6.6318
-		//);
+
+	function initializeMap(){
 		var options = {
 			zoom: 17,
 			center: new google.maps.LatLng(49.767850, 6.628745),
@@ -386,10 +381,10 @@ angular.module('clientApp')
 			scrollwheel: false,
 			draggable: false,
 			disableDoubleClickZoom: true,
-			mapTypeId: google.maps.MapTypeId.SATELLITE
+			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 		
-		var map = new google.maps.Map(document.getElementById('map_canvas'), options);
+		$scope.map = new google.maps.Map(document.getElementById('map_canvas'), options);
 
 		//Zeichnen der Gebäude auf die Karte und registrieren der Click Events.
 		$scope.paintBuildings = function(){
@@ -421,17 +416,17 @@ angular.module('clientApp')
 						fillOpacity: building.fillOpacity
 					});
 				}
-		
+
+				//Platziere es auf der Karte
+				building.polygon.setMap($scope.map);
+
 				if(!building.label){
 					building.label = new Label({
 						position: building.labelPos,
-						map: map,
+						map: $scope.map,
 						text: building.name
 					});
 				}
-
-				//Platziere es auf der Karte
-				building.polygon.setMap(map);
 
 				//Füge Klick Ereignis hinzu
 				google.maps.event.addListener(building.polygon, 'click', function() {
@@ -439,12 +434,22 @@ angular.module('clientApp')
 						//Wechsel den Selected Status des Objekts
 						building.selected = !building.selected;
 						$scope.paintBuildings();
-					});		
+					});
 				});
 			});
 		};
 		$scope.paintBuildings();
+	}
 
+	//Google Maps & Geolocation API NEW
+	function displayPosition(position) {
+		var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+		//var imageBounds = new google.maps.LatLngBounds(
+		//new google.maps.LatLng(49.766111, 6.6253), //49.7663, 6.6254
+		//new google.maps.LatLng(49.769399, 6.6318) //49.7692, 6.6318
+		//);
+
+		initializeMap();
 		//var newmap = new google.maps.GroundOverlay('./img/CampMapOld.png',imageBounds);
 		//newmap.setMap(map);
 		// Remove the current marker, if there is one
@@ -453,46 +458,23 @@ angular.module('clientApp')
 		}
 		marker = new google.maps.Marker({
 			position: pos,
-			map: map,
+			map: $scope.map,
 			title: 'User location'
 		});
-		var contentString = '<b>Timestamp:</b> ' + parseTimestamp(position.timestamp) + '<br/><b>User location:</b> lat ' + position.coords.latitude + ', long ' + position.coords.longitude + ', accuracy ' + position.coords.accuracy;
-		// Remove the current infoWindow, if there is one
-		if (typeof(infoWindow) !== 'undefined') {
-			infoWindow.setMap(null);
-		}
-		infoWindow = new google.maps.InfoWindow({
-			content: contentString
-		});
-		google.maps.event.addListener(marker, 'click', function() {
-			infoWindow.open(map,marker);
-		});
-
 	}
 
 	function displayError(error) {
+		initializeMap();
+
 		var errors = {
 			1: 'Permission denied',
 			2: 'Position unavailable',
 			3: 'Request timeout'
 		};
-		alert('Error: ' + errors[error.code]);
-	}
-
-	function parseTimestamp(timestamp) {
-		var d = new Date(timestamp);
-		var day = d.getDate();
-		var month = d.getMonth() + 1;
-		var year = d.getFullYear();
-		var hour = d.getHours();
-		var mins = d.getMinutes();
-		var secs = d.getSeconds();
-		var msec = d.getMilliseconds();
-		return day + '.' + month + '.' + year + ' ' + hour + ':' + mins + ':' + secs + ',' + msec;
+		console.log('Error: ' + errors[error.code]);
 	}
 
 	var marker;
-	var infoWindow;
 	if (navigator.geolocation) {
 		var timeoutVal = 10 * 1000 * 1000;
 		navigator.geolocation.watchPosition(

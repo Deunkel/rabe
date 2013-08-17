@@ -371,7 +371,58 @@ angular.module('clientApp')
 		}
 	};
 
+	//Zeichnen der Gebäude auf die Karte und registrieren der Click Events.
+	$scope.paintBuildings = function(map){
+		angular.forEach($scope.buildings, function(building, key){
 
+			//Wenn polygon zu Gebäude existiert nimm es von der Karte Runtern
+			if(building.polygon){
+				building.polygon.setMap(null);
+			}
+
+			//Erzeuge neues mit Werten aus JSON
+			if(building.selected){
+				building.polygon = new google.maps.Polygon({
+					paths: building.path,
+					strokeColor: $scope.selectionStrokeColor,
+					strokeOpacity: building.strokeOpacity,
+					strokeWeight: $scope.selectionStrokeWeight,
+					fillColor: $scope.selectionFillColor,
+					fillOpacity: $scope.selectionfillOpacity
+				});
+			}
+			else {
+				building.polygon = new google.maps.Polygon({
+					paths: building.path,
+					strokeColor: building.strokeColor,
+					strokeOpacity: building.strokeOpacity,
+					strokeWeight: building.strokeWeight,
+					fillColor: building.fillColor,
+					fillOpacity: building.fillOpacity
+				});
+			}
+
+			//Platziere es auf der Karte
+			building.polygon.setMap(map);
+
+			if(!building.label){
+				building.label = new Label({
+					position: building.labelPos,
+					map: map,
+					text: building.name
+				});
+			}
+
+			//Füge Klick Ereignis hinzu
+			google.maps.event.addListener(building.polygon, 'click', function() {
+				$scope.$apply(function () {
+					//Wechsel den Selected Status des Objekts
+					building.selected = !building.selected;
+					$scope.paintBuildings(map);
+				});
+			});
+		});
+	};
 
 	function initializeMap(){
 		var options = {
@@ -386,59 +437,7 @@ angular.module('clientApp')
 		
 		$scope.map = new google.maps.Map(document.getElementById('map_canvas'), options);
 
-		//Zeichnen der Gebäude auf die Karte und registrieren der Click Events.
-		$scope.paintBuildings = function(){
-			angular.forEach($scope.buildings, function(building, key){
-
-				//Wenn polygon zu Gebäude existiert nimm es von der Karte Runtern
-				if(building.polygon){
-					building.polygon.setMap(null);
-				}
-
-				//Erzeuge neues mit Werten aus JSON
-				if(building.selected){
-					building.polygon = new google.maps.Polygon({
-						paths: building.path,
-						strokeColor: $scope.selectionStrokeColor,
-						strokeOpacity: building.strokeOpacity,
-						strokeWeight: $scope.selectionStrokeWeight,
-						fillColor: $scope.selectionFillColor,
-						fillOpacity: $scope.selectionfillOpacity
-					});
-				}
-				else {
-					building.polygon = new google.maps.Polygon({
-						paths: building.path,
-						strokeColor: building.strokeColor,
-						strokeOpacity: building.strokeOpacity,
-						strokeWeight: building.strokeWeight,
-						fillColor: building.fillColor,
-						fillOpacity: building.fillOpacity
-					});
-				}
-
-				//Platziere es auf der Karte
-				building.polygon.setMap($scope.map);
-
-				if(!building.label){
-					building.label = new Label({
-						position: building.labelPos,
-						map: $scope.map,
-						text: building.name
-					});
-				}
-
-				//Füge Klick Ereignis hinzu
-				google.maps.event.addListener(building.polygon, 'click', function() {
-					$scope.$apply(function () {
-						//Wechsel den Selected Status des Objekts
-						building.selected = !building.selected;
-						$scope.paintBuildings();
-					});
-				});
-			});
-		};
-		$scope.paintBuildings();
+		$scope.paintBuildings($scope.map);
 	}
 
 	//Google Maps & Geolocation API NEW

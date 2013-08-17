@@ -47,7 +47,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.768452,6.627343),
-			'selected': true
+			'selected': false
 		},
 		'B': {
 			'name': 'B',
@@ -66,7 +66,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.768307,6.628118),
-			'selected': true
+			'selected': false
 		},
 		'C': {
 			'name': 'C',
@@ -85,7 +85,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.768166,6.628890),
-			'selected': true
+			'selected': false
 		},
 
 		'D': {
@@ -105,7 +105,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.768021,6.629652),
-			'selected': true
+			'selected': false
 		},
 
 		'E': {
@@ -130,7 +130,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767754,6.630972),
-			'selected': true
+			'selected': false
 		},
 
 		'F': {
@@ -152,7 +152,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767520,6.630634),
-			'selected': true
+			'selected': false
 		},
 
 
@@ -179,7 +179,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767331,6.630443),
-			'selected': true
+			'selected': false
 		},
 
 		'H': {
@@ -200,7 +200,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767208,6.630242),
-			'selected': true
+			'selected': false
 		},
 
 		'J': {
@@ -221,7 +221,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767040,6.629668),
-			'selected': true
+			'selected': false
 		},
 
 		'K': {
@@ -242,7 +242,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767009,6.629043),
-			'selected': true
+			'selected': false
 		},
 
 		'L': {
@@ -263,7 +263,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767089,6.628408),
-			'selected': true
+			'selected': false
 		},
 		
 		'N': {
@@ -283,7 +283,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767191,6.628099),
-			'selected': true
+			'selected': false
 		},
 
 		'O': {
@@ -304,7 +304,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767191,6.627791),
-			'selected': true
+			'selected': false
 		},
 
 		'T': {
@@ -325,7 +325,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767872,6.626814),
-			'selected': true
+			'selected': false
 		},
 
 		'M': {
@@ -346,7 +346,7 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.768705,6.626672),
-			'selected': true
+			'selected': false
 		},
 
 		'X': {
@@ -367,8 +367,15 @@ angular.module('clientApp')
 			'polygon': null,
 			'label': null,
 			'labelPos': new google.maps.LatLng(49.767556,6.628534),
-			'selected': true
+			'selected': false
 		}
+	};
+
+	$scope.selectBuilding = function(selBuilding, map){
+		//Wechsel den Selected Status des Objekts
+		selBuilding.selected = !selBuilding.selected;
+		$scope.$apply();
+		$scope.paintBuildings(map);
 	};
 
 	//Zeichnen der Gebäude auf die Karte und registrieren der Click Events.
@@ -412,19 +419,24 @@ angular.module('clientApp')
 					text: building.name
 				});
 			}
+			building.polygon.setMap(map);
 
 			//Füge Klick Ereignis hinzu
 			google.maps.event.addListener(building.polygon, 'click', function() {
-				$scope.$apply(function () {
-					//Wechsel den Selected Status des Objekts
-					building.selected = !building.selected;
-					$scope.paintBuildings(map);
-				});
+				if(!$scope.GeoWatcherId){
+					$scope.selectBuilding(building, map);
+				}
 			});
+
+			if($scope.GeoWatcherId && google.maps.geometry.poly.containsLocation($scope.myPos, building.polygon) && !building.selected){
+				$scope.selectBuilding(building, map);
+			}
 		});
 	};
 
 	function initializeMap(){
+		$scope.myPos = new google.maps.LatLng(49.767850, 6.628745);
+
 		var options = {
 			zoom: 17,
 			center: new google.maps.LatLng(49.767850, 6.628745),
@@ -434,37 +446,73 @@ angular.module('clientApp')
 			disableDoubleClickZoom: true,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
-		
+
 		$scope.map = new google.maps.Map(document.getElementById('map_canvas'), options);
 
 		$scope.paintBuildings($scope.map);
-	}
 
+	}
+	initializeMap();
+
+	$scope.GeoWatcherId = null;
+	var marker;
+
+	$scope.startStopGeoWatcher = function () {
+		if($scope.GeoWatcherId){
+			navigator.geolocation.clearWatch($scope.GeoWatcherId);
+			$scope.GeoWatcherId = null;
+			marker.setMap(null);
+			$scope.selectDeselectAllBuildings(false);
+			$scope.paintBuildings($scope.map);
+		}
+		else {
+			if (navigator.geolocation) {
+				var timeoutVal = 5000;//10 * 1000 * 1000;
+				$scope.GeoWatcherId = navigator.geolocation.watchPosition(
+					displayPosition,
+					displayError,
+					{ enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 }
+				);
+			}
+			else {
+				alert('Geolocation is not supported by this browser');
+			}	
+		}
+	};
+
+	$scope.selectDeselectAllBuildings = function (selectDeselectAll) {
+		//selectDeselectAll --> true=select all,  false=deselect all
+		angular.forEach($scope.buildings, function(building, key){
+			building.selected = selectDeselectAll;
+		});
+	};
+	
 	//Google Maps & Geolocation API NEW
 	function displayPosition(position) {
-		var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+		$scope.myPos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 		//var imageBounds = new google.maps.LatLngBounds(
 		//new google.maps.LatLng(49.766111, 6.6253), //49.7663, 6.6254
 		//new google.maps.LatLng(49.769399, 6.6318) //49.7692, 6.6318
 		//);
 
-		initializeMap();
 		//var newmap = new google.maps.GroundOverlay('./img/CampMapOld.png',imageBounds);
 		//newmap.setMap(map);
 		// Remove the current marker, if there is one
-		if (typeof(marker) !== 'undefined') {
+		if (marker) {
 			marker.setMap(null);
 		}
 		marker = new google.maps.Marker({
-			position: pos,
+			position: $scope.myPos,
 			map: $scope.map,
-			title: 'User location'
+			title: 'Das bist du!'
 		});
+
+
+		$scope.selectDeselectAllBuildings(false);
+		$scope.paintBuildings($scope.map);
 	}
 
 	function displayError(error) {
-		initializeMap();
-
 		var errors = {
 			1: 'Permission denied',
 			2: 'Position unavailable',
@@ -473,18 +521,7 @@ angular.module('clientApp')
 		console.log('Error: ' + errors[error.code]);
 	}
 
-	var marker;
-	if (navigator.geolocation) {
-		var timeoutVal = 10 * 1000 * 1000;
-		navigator.geolocation.watchPosition(
-			displayPosition,
-			displayError,
-			{ enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 }
-		);
-	}
-	else {
-		alert('Geolocation is not supported by this browser');
-	}
+	
 
 	//Alte Google Maps & Geolocation API OLD
 	//function initialize(coords) {

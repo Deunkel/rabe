@@ -28,7 +28,6 @@ angular.module('clientApp')
 	$scope.selectionStrokeOpacity = $scope.buildingStrokeOpacity;
 	$scope.selectionStrokeWeight = $scope.buildingStrokeWeight;
 
-
 	$scope.buildings = {
 		'A': {
 			'name': 'A',
@@ -369,6 +368,15 @@ angular.module('clientApp')
 			'labelPos': new google.maps.LatLng(49.767556,6.628534),
 			'selected': false
 		}
+	};
+
+	$scope.isGeoWatcherActive = function () {
+		var token = "danger";
+		if($scope.GeoWatcherId) {
+			token = "success";
+		}
+
+		return token;
 	};
 
 	$scope.selectBuilding = function(selBuilding, map){

@@ -291,6 +291,135 @@
         
       }
     ]
+  },
+
+  {
+    "id": "18",
+    "name": "L 1",
+    "equipment": "Audio-Anlage,Leinwand,Tafel,Beamer,Tageslichtprojektor",
+    "seats": "48",
+    "events":[
+      [
+        {"id":"170005","start":"2013-08-19T09:45:00","end":"2013-08-19T13:15:00","allDay":false,"title":"Workflow-Management (Sitzung): (Lux)"},
+        {"id":"170006","start":"2013-08-19T14:00:00","end":"2013-08-19T15:30:00","allDay":false,"title":"Verteilte Systeme (Sitzung): (Oechsle)"},
+        {"id":"170007","start":"2013-08-19T15:45:00","end":"2013-08-19T17:15:00","allDay":false,"title":"Digitale Schaltungen, Gruppe 3 (Sitzung) (Romes)"},
+        {"id":"170008","start":"2013-08-19T15:45:00","end":"2013-08-19T17:15:00","allDay":false,"title":"Verteilte Systeme (Sitzung): (Oechsle)"},
+        {"id":"170009","start":"2013-08-19T17:30:00","end":"2013-08-19T19:00:00","allDay":false,"title":"Seminar Mathematisch denken (Sitzung): (Linn)"},
+        {"id":"170010","start":"2013-08-20T08:00:00","end":"2013-08-20T11:15:00","allDay":false,"title":"Englisch, Gruppe 2 (Sitzung): (Musch)"},
+        {"id":"170011","start":"2013-08-20T14:00:00","end":"2013-08-20T15:30:00","allDay":false,"title":"Englisch, Gruppe 3 (Sitzung) (Musch)"},
+        {"id":"170012","start":"2013-08-20T14:00:00","end":"2013-08-20T15:30:00","allDay":false,"title":"Angewandte Logik Tutorium, (Sitzung): (Kutsch)"},
+        {"id":"170013","start":"2013-08-21T11:30:00","end":"2013-08-21T13:00:00","allDay":false,"title":"Lineare Algebra, Gruppe 1 (Sitzung): (Klösener)"},
+        {"id":"170014","start":"2013-08-22T15:45:00","end":"2013-08-22T17:15:00","allDay":false,"title":"Biostatistik und Epidemiologie (Sitzung): (Lohscheller)"}
+      ],
+      {
+        
+      }
+    ]
+  },
+
+  {
+    "id": "19",
+    "name": "L 104",
+    "equipment": "Audio-Anlage,Leinwand,Tafel,Beamer/Datenprojektor,Tageslichtprojektor",
+    "seats": "84",
+    "events":[
+      [
+        {"id":"170005","start":"2013-08-20T09:45:00","end":"2013-08-20T12:15:00","allDay":false,"title":"Entwicklung Verteilter Anwendungen (Sitzung): (Fries)"},
+        {"id":"170006","start":"2013-08-20T17:30:00","end":"2013-08-20T19:00:00","allDay":false,"title":"Komponentenbasierte und generative Software-Entwic... : (Oechsle)"},
+        {"id":"170007","start":"2013-08-21T08:00:00","end":"2013-08-21T09:30:00","allDay":false,"title":"Entwicklung verteilter Anwendungen, Gruppe 1 (Sitzung) (Fries)"},
+        {"id":"170008","start":"2013-08-21T14:00:00","end":"2013-08-21T15:30:00","allDay":false,"title":"Funktionale Programmierung (Sitzung): (Bläsius)"},
+        {"id":"170009","start":"2013-08-22T09:45:00","end":"2013-08-22T11:15:00","allDay":false,"title":"Medizinische Bildgebungsverfahren (Sitzung): (Lohscheller)"},
+        {"id":"170010","start":"2013-08-22T15:45:00","end":"2013-08-22T17:15:00","allDay":false,"title":"Lineare Algebra, Gruppe 4 (Sitzung): (Klösener)"},
+        {"id":"170011","start":"2013-08-23T09:45:00","end":"2013-08-23T11:15:00","allDay":false,"title":"Lineare Algebra, Gruppe 2 (Sitzung) (Blanke)"},
+        {"id":"170012","start":"2013-08-24T08:00:00","end":"2013-08-24T09:30:00","allDay":false,"title":"Spielprogrammierung, (Sitzung): (Lürig)"}
+        
+      ],
+      {
+        
+      }
+    ]
+  },
+
+  {
+    "id": "20",
+    "name": "C 101",
+    "equipment": "Tafel,Beamer/Datenprojektor",
+    "seats": "40",
+    "events":[
+      [
+        
+        {"id":"170007","start":"2013-08-21T14:00:00","end":"2013-08-21T17:00:00","allDay":false,"title":"BKD2_Design/Werbung (Sitzung) (Vaske)"},
+        {"id":"170008","start":"2013-08-22T09:00:00","end":"2013-08-22T12:12:00","allDay":false,"title":"BKD1_Design/Werbung (Sitzung) (Vaske)"},
+        {"id":"170009","start":"2013-08-22T13:00:00","end":"2013-08-22T16:00:00","allDay":false,"title":"BKD1_Narrative Film & TV Spots (Sitzung) (Vaske)"},
+        {"id":"170010","start":"2013-08-23T11:30:00","end":"2013-08-23T13:45:00","allDay":false,"title":"BKD1_Entwurf Design Werbung (Sitzung) (Vaske)"},
+        {"id":"170011","start":"2013-08-24T14:30:00","end":"2013-08-24T17:30:00","allDay":false,"title":"MKD_Kultur- und Kreativwirtschaft (Sitzung) (Diederichs)"}
+        
+      ],
+      {
+        
+      }
+    ]
+  },
+
+  {
+    "id": "21",
+    "name": "T 001",
+    "equipment": "keine",
+    "seats": "84",
+    "events":[
+      [
+        
+        {"id":"170007","start":"2013-08-21T09:45:00","end":"2013-08-21T11:15:00","allDay":false,"title":"Entwicklung verteilter Anwendungen (Sitzung) (Fries)"},
+        {"id":"170008","start":"2013-08-22T14:00:00","end":"2013-08-22T15:30:00","allDay":false,"title":"Datenstrukturen und Algorithmen Tutorium (Sitzung) (Grumbach)"},
+        {"id":"170009","start":"2013-08-23T08:00:00","end":"2013-08-23T09:30:00","allDay":false,"title":"Künstliche Intelligenz für Spiele (Sitzung) (Rezk-Salama)"},
+        {"id":"170010","start":"2013-08-24T14:30:00","end":"2013-08-24T15:30:00","allDay":false,"title":"Digitale Schaltungen (Sitzung) (Gemmar, Romes)"},
+        {"id":"170011","start":"2013-08-25T11:30:00","end":"2013-08-25T13:00:00","allDay":false,"title":"Lineare Algebra Tutorium (Sitzung) (Blanke)"}
+        
+      ],
+      {
+        
+      }
+    ]
+  },
+
+  {
+    "id": "22",
+    "name": "A 103",
+    "equipment": "Audio-Anlage, Beamer/Datenprojektor, Leinwand, Tafel, Tageslichtprojektor, Waschbecken",
+    "seats": "46",
+    "events":[
+      [
+        
+        {"id":"170007","start":"2013-08-21T08:00:00","end":"2013-08-21T09:30:00","allDay":false,"title":"Englisch, Gruppe 2 (Sitzung) (Musch)"},
+        {"id":"170008","start":"2013-08-21T09:45:00","end":"2013-08-21T11:15:00","allDay":false,"title":"Englisch, Gruppe 2 (Sitzung) (Musch)"},
+        {"id":"170009","start":"2013-08-22T14:00:00","end":"2013-08-22T15:30:00","allDay":false,"title":"Englisch, Gruppe 1 (Sitzung) (Musch)"},
+        {"id":"170010","start":"2013-08-23T08:00:00","end":"2013-08-23T09:30:00","allDay":false,"title":"Grundlagen der Mathematik, Gruppe 3 (Sitzung) (Linn)"}
+        
+      ],
+      {
+        
+      }
+    ]
+  },
+
+  {
+    "id": "23",
+    "name": "C 102",
+    "equipment": "Tafel,Beamer/Datenprojektor",
+    "seats": "46",
+    "events":[
+      [
+        {"id":"170008","start":"2013-08-22T13:00:00","end":"2013-08-22T15:15:00","allDay":false,"title":"BKD4_Kunst-und Designwissenschaft 3 (Sitzung) (Schröder)"},
+        {"id":"170009","start":"2013-08-23T09:00:00","end":"2013-08-23T11:15:00","allDay":false,"title":"BKD4_Kunst-und Designwissenschaft 2 (Sitzung) (Schröder)"},
+        {"id":"170010","start":"2013-08-24T15:00:00","end":"2013-08-24T18:00:00","allDay":false,"title":"BKD4_Kommunikationswissenschaft 2 (Sitzung) (Müller)"},
+        {"id":"170011","start":"2013-08-25T14:00:00","end":"2013-08-25T17:00:00","allDay":false,"title":"BKD3_Typo.Grundlagen 1/Tech. Grundlagen (Sitzung) (Neuer)"},
+        {"id":"170011","start":"2013-08-26T14:00:00","end":"2013-08-26T17:00:00","allDay":false,"title":"BKD3_Typo.Grundlagen 1/Tech. Grundlagen (Sitzung) (Neuer)"}
+        
+      ],
+      {
+        
+      }
+    ]
   }
 
 ]

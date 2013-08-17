@@ -382,6 +382,14 @@ angular.module('clientApp')
 	$scope.selectBuilding = function(selBuilding, map){
 		//Wechsel den Selected Status des Objekts
 		selBuilding.selected = !selBuilding.selected;
+
+		$scope.allBuildingsSelected = true;
+		angular.forEach($scope.buildings, function(building, key){
+			if(!building.selected) {
+				$scope.allBuildingsSelected = false;	
+			}
+		});
+		
 		$scope.$apply();
 		$scope.paintBuildings(map);
 	};
@@ -471,7 +479,6 @@ angular.module('clientApp')
 			$scope.GeoWatcherId = null;
 			marker.setMap(null);
 			$scope.selectDeselectAllBuildings(false);
-			$scope.paintBuildings($scope.map);
 		}
 		else {
 			if (navigator.geolocation) {
@@ -484,15 +491,30 @@ angular.module('clientApp')
 			}
 			else {
 				alert('Geolocation is not supported by this browser');
-			}	
+			}
 		}
 	};
 
+	$scope.allBuildingsSelected = false;
 	$scope.selectDeselectAllBuildings = function (selectDeselectAll) {
+		
+		$scope.allBuildingsSelected = selectDeselectAll;
+		
 		//selectDeselectAll --> true=select all,  false=deselect all
 		angular.forEach($scope.buildings, function(building, key){
-			building.selected = selectDeselectAll;
+			building.selected = $scope.allBuildingsSelected;
 		});
+
+		$scope.paintBuildings($scope.map);
+	};
+
+	$scope.areAllBuildingsSelected = function () {
+		var token = 'danger';
+		if($scope.allBuildingsSelected) {
+			token = 'success';
+		}
+
+		return token;
 	};
 	
 	//Google Maps & Geolocation API NEW
@@ -517,7 +539,6 @@ angular.module('clientApp')
 
 
 		$scope.selectDeselectAllBuildings(false);
-		$scope.paintBuildings($scope.map);
 	}
 
 	function displayError(error) {

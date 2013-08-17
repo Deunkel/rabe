@@ -4,7 +4,7 @@
         <a class="brand" href="#">RABE</a>
         <ul class="nav">
             
-            <li><input type="text" class="search-query" ng-model="query" placeholder="Bitte einen Raum eingeben" ng-show="showSearch" style="margin-top:6px; margin-right: 10px"></li>
+            <li><input type="text" class="search-query span6 pull-right" ng-model="query" placeholder="Raum" ng-show="showSearch" style="margin-top:6px; margin-right: 10px"></li>
             <li class="divider-vertical"></li>
             <li ng-class="{active: showSearch}" ng-click="showSearch=!showSearch" data-toggle="collapse" data-target="#search"><a href=""><i class="icon-search icon-white"></i></a></li>
             <li class="divider-vertical"></li>
@@ -21,7 +21,8 @@
 <div class="row-fluid">
   <!--/GoogleMaps -->
   <div id="map" class="collapse in">
-    <a style="position: absolute; top: 30px; left: -5px; z-index: 100000000;" class="btn btn-{{isGeoWatcherActive()}}" ng-click="startStopGeoWatcher()" ng-model="gps"><i class="icon-globe icon-white"></i> GPS</a>
+    <a style="position: absolute; top: 30px; left: -5px; z-index: 100000000;" class="btn btn-{{isGeoWatcherActive()}}" ng-click="startStopGeoWatcher()" ng-model="gps">Location <i class="icon-globe icon-white"></i></a>
+    <a style="position: absolute; top: 70px; left: -5px; z-index: 100000000;" class="btn btn-{{areAllBuildingsSelected()}}" ng-click="selectDeselectAllBuildings(!allBuildingsSelected)" ng-model="gps">Building &nbsp;<i class="icon-th icon-white"></i></a>
     <div id="map_canvas">
       <p style="text-align: center">Deine Position wird ermittelt...</p>
     </div>

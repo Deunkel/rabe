@@ -32,7 +32,7 @@
 
 <div class="row-fluid">
   <!--/Time selection -->
-  <div id="time" class="collapse in">
+  <div id="time" class="collapse out">
     <div class="time controls controls-row">
       <div class="span1"><i class="icon-time icon-large"></i></div>
       <div class="span3">
@@ -50,7 +50,7 @@
 
 <div class="row-fluid" style="margin-top: 10px">
   <div class="accordion" id="roomList">
-    <div class="accordion-group" ng-repeat="room in rooms | filter:{name:query} | freeRoom:fromTime:toTime | selectedBuilding:buildings">
+    <div class="accordion-group" ng-repeat="room in rooms | selectedBuilding:buildings | filter:{name:query} | freeRoom:fromTime:toTime">
       <div class="accordion-heading">
         <div class="row-fluid" class="accordion-toggle" data-toggle="collapse" data-parent="#roomList" href="#collapse{{room.id}}">
           <div class="span1" style="text-align: center">
@@ -62,7 +62,7 @@
       </div>
       <div id="collapse{{room.id}}" class="accordion-body collapse out">
         <div class="accordion-inner">
-      <!--<ul>
+          <!--<ul>
             <li ng-repeat="event in room.events[0]">{{event.title}} von: {{event.start}} bis: {{event.end}}</li>
           </ul> -->
           <div ui-calendar="{
